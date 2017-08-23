@@ -93,7 +93,7 @@ public class LongestSubstring_3 {
 
         for(int j = 0, i = 0; j < n; j++){
             if(map.containsKey(s.charAt(j))){
-                i = Math.max(map.get(s.charAt(j)), i);
+                i = Math.max(map.get(s.charAt(j)), i); // 神来之笔，无论是当前i的左边还是右边
             }
             ans = Math.max(ans, j - i + 1); // 保存的最大值是判断重复前一次的值，因此需要加1
             map.put(s.charAt(j), j + 1);
